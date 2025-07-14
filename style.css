@@ -21,18 +21,20 @@ h1 {
 
 .ramo {
   border: 2px solid #c71585;
-  background-color: #ffe6f0;
+  background-color: #ffc0cb; /* rosado bonito */
   padding: 15px;
   border-radius: 15px;
   cursor: pointer;
   transition: transform 0.2s, background-color 0.2s;
   position: relative;
+  user-select: none; /* evita selección accidental */
+  color: #4b0082; /* texto morado oscuro */
 }
 
 .ramo.aprobado {
-  background-color: #dda0dd;
-  border-color: #800080;
-  color: white;
+  background-color: #800080; /* morado oscuro */
+  border-color: #4b0082; /* índigo */
+  color: #fff;
   text-decoration: line-through;
 }
 
@@ -42,7 +44,28 @@ h1 {
   pointer-events: none;
 }
 
+/* Tooltip para ramos bloqueados */
+.ramo.bloqueado::after {
+  content: "Requisitos no cumplidos";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #c71585;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.ramo.bloqueado:hover::after {
+  opacity: 1;
+}
+
 .ramo:hover {
   transform: scale(1.03);
 }
-
