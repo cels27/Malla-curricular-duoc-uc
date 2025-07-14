@@ -1,33 +1,19 @@
-// Función para guardar estado en localStorage
-function guardarProgreso() {
-    const estado = {};
-    document.querySelectorAll('.ramo').forEach((ramo, index) => {
-        estado[index] = ramo.classList.contains('aprobado');
-    });
-    localStorage.setItem('estadoRamos', JSON.stringify(estado));
-}
+// script.js
+document.addEventListener("DOMContentLoaded", () => {
+  const botones = document.querySelectorAll("button[data-ramo]");
+  const aprobados = JSON.parse(localStorage.getItem("ramosAprobados") || "[]");
 
-// Función para cargar estado desde localStorage
-function cargarProgreso() {
-    const estadoGuardado = JSON.parse(localStorage.getItem('estadoRamos'));
-    if (estadoGuardado) {
-        document.querySelectorAll('.ramo').forEach((ramo, index) => {
-            if (estadoGuardado[index]) {
-                ramo.classList.add('aprobado');
-            } else {
-                ramo.classList.remove('aprobado');
-            }
-        });
+  botones.forEach(btn => {
+    const nombre = btn.getAttribute("data-ramo");
+    if (aprobados.includes(nombre)) {
+      btn.classList.add("aprobado");
     }
-}
 
-// Ejecuta al cargar la página
-cargarProgreso();
-
-// Habilita alternancia con clic + guarda estado
-document.querySelectorAll('.ramo').forEach(ramo => {
-    ramo.addEventListener('click', () => {
-        ramo.classList.toggle('aprobado');
-        guardarProgreso();
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("aprobado");
+      const actualizado = Array.from(document.querySelectorAll("button.aprobado"))
+                              .map(b => b.getAttribute("data-ramo"));
+      localStorage.setItem("ramosAprobados", JSON.stringify(actualizado));
     });
+  });
 });
