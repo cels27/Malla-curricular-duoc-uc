@@ -1,4 +1,3 @@
-/* estilos.css */
 body {
   font-family: Arial, sans-serif;
   background: #fff0f5;
@@ -15,27 +14,34 @@ h1 {
 
 .malla {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  /* 4 columnas fijas para buena visualización, ajusta según prefieras */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .ramo {
   border: 2px solid #c71585;
-  background-color: #ffc0cb; /* rosado bonito */
+  background-color: #ffc0cb; /* rosa claro */
   padding: 15px;
   border-radius: 15px;
   cursor: pointer;
   transition: transform 0.2s, background-color 0.2s;
   position: relative;
-  user-select: none; /* evita selección accidental */
+  user-select: none;
   color: #4b0082; /* texto morado oscuro */
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 1px 2px 5px rgba(199, 21, 133, 0.3);
 }
 
 .ramo.aprobado {
   background-color: #800080; /* morado oscuro */
-  border-color: #4b0082; /* índigo */
+  border-color: #4b0082;
   color: #fff;
   text-decoration: line-through;
+  box-shadow: 1px 2px 8px rgba(128, 0, 128, 0.7);
 }
 
 .ramo.bloqueado {
@@ -60,12 +66,14 @@ h1 {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
+  z-index: 10;
 }
 
 .ramo.bloqueado:hover::after {
   opacity: 1;
 }
 
-.ramo:hover {
-  transform: scale(1.03);
+.ramo:hover:not(.bloqueado) {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #c71585;
 }
