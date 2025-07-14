@@ -1,79 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Malla Curricular Técnico en Enfermería</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Técnico en Enfermería</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Malla Curricular Técnico en Enfermería</h1>
-
-    <div class="malla-container">
-        <div class="semestre" id="semestre1">
-            <h2>1° PERIODO</h2>
-            <ul>
-                <li class="ramo">Bioseguridad en la atención clínica</li>
-                <li class="ramo">Técnicas básicas de enfermería</li>
-                <li class="ramo">Técnicas de primeros auxilios</li>
-                <li class="ramo">Anatomía y fisiología</li>
-                <li class="ramo">Habilidades básicas de comunicación</li>
-                <li class="ramo">Habilidades numéricas</li>
-                <li class="ramo">Proceso de Portafolio 1</li>
-            </ul>
-        </div>
-
-        <div class="semestre" id="semestre2">
-            <h2>2° PERIODO</h2>
-            <ul>
-                <li class="ramo">Administración de fármacos</li>
-                <li class="ramo">Atención de enfermería médico quirúrgica</li>
-                <li class="ramo">Cuidados de enfermería maternoneonatal</li>
-                <li class="ramo">Fundamentos de antropología</li>
-                <li class="ramo">Habilidades de comunicación efectiva</li>
-                <li class="ramo">Habilidades del lenguaje matemático</li>
-                <li class="ramo">Práctica clínica I</li>
-                <li class="ramo">Proceso de Portafolio 2</li>
-            </ul>
-        </div>
-
-        <div class="semestre" id="semestre3">
-            <h2>3° PERIODO</h2>
-            <ul>
-                <li class="ramo">Cuidados de enfermería en urgencias</li>
-                <li class="ramo">Cuidados de enfermería pediátrica</li>
-                <li class="ramo">Inglés básico I</li>
-                <li class="ramo">Manejo de equipos e insumos</li>
-                <li class="ramo">Optativo formación cristiana</li>
-                <li class="ramo">Mentalidad emprendedora</li>
-                <li class="ramo">Práctica clínica II</li>
-                <li class="ramo">Proceso de Portafolio 3</li>
-            </ul>
-        </div>
-
-        <div class="semestre" id="semestre4">
-            <h2>4° PERIODO</h2>
-            <ul>
-                <li class="ramo">Cuidados de enfermería en salud mental</li>
-                <li class="ramo">Inglés básico II</li>
-                <li class="ramo">Habilidades para el trabajo</li>
-                <li class="ramo">Informática en la atención del paciente</li>
-                <li class="ramo">Promoción y prevención de la salud</li>
-                <li class="ramo">Ética para el trabajo</li>
-                <li class="ramo">Práctica clínica III</li>
-                <li class="ramo">Proceso de Portafolio Final</li>
-            </ul>
-        </div>
-
-        <div class="semestre" id="semestre5">
-            <h2>5° PERIODO</h2>
-            <ul>
-                <li class="ramo">Internado</li>
-                <li class="ramo">Portafolio de título</li>
-            </ul>
-        </div>
+  <h1>Malla Técnico en Enfermería</h1>
+  <div class="malla">
+    <div class="semestre" id="semestre-1">
+      <h2>1° PERIODO</h2>
+      <div class="ramos">
+        <button data-ramo="Bioseguridad en la atención clínica">Bioseguridad en la atención clínica</button>
+        <button data-ramo="Técnicas básicas de enfermería">Técnicas básicas de enfermería</button>
+        <button data-ramo="Técnicas de primeros auxilios">Técnicas de primeros auxilios</button>
+        <button data-ramo="Anatomía y fisiología">Anatomía y fisiología</button>
+        <button data-ramo="Habilidades básicas de comunicación">Habilidades básicas de comunicación</button>
+        <button data-ramo="Habilidades numéricas">Habilidades numéricas</button>
+        <button data-ramo="Proceso de Portafolio 1">Proceso de Portafolio 1</button>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="semestre" id="semestre-2">
+      <h2>2° PERIODO</h2>
+      <div class="ramos">
+        <button data-ramo="Administración de fármacos">Administración de fármacos</button>
+        <button data-ramo="Atención de enfermería médico quirúrgica">Atención de enfermería médico quirúrgica</button>
+        <button data-ramo="Cuidados de enfermería maternoneonatal">Cuidados de enfermería maternoneonatal</button>
+        <button data-ramo="Fundamentos de antropología">Fundamentos de antropología</button>
+        <button data-ramo="Habilidades de comunicación efectiva">Habilidades de comunicación efectiva</button>
+        <button data-ramo="Habilidades del lenguaje matemático">Habilidades del lenguaje matemático</button>
+        <button data-ramo="Práctica clínica I">Práctica clínica I</button>
+        <button data-ramo="Proceso de Portafolio 2">Proceso de Portafolio 2</button>
+      </div>
+    </div>
+
+    <div class="semestre" id="semestre-3">
+      <h2>3° PERIODO</h2>
+      <div class="ramos">
+        <button data-ramo="Cuidados de enfermería en urgencias">Cuidados de enfermería en urgencias</button>
+        <button data-ramo="Cuidados de enfermería pediátrica">Cuidados de enfermería pediátrica</button>
+        <button data-ramo="Inglés básico I">Inglés básico I</button>
+        <button data-ramo="Manejo de equipos e insumos">Manejo de equipos e insumos</button>
+        <button data-ramo="Optativo formación cristiana">Optativo formación cristiana</button>
+        <button data-ramo="Mentalidad emprendedora">Mentalidad emprendedora</button>
+        <button data-ramo="Práctica clínica II">Práctica clínica II</button>
+        <button data-ramo="Proceso de Portafolio 3">Proceso de Portafolio 3</button>
+      </div>
+    </div>
+
+    <div class="semestre" id="semestre-4">
+      <h2>4° PERIODO</h2>
+      <div class="ramos">
+        <button data-ramo="Cuidados de enfermería en salud mental">Cuidados de enfermería en salud mental</button>
+        <button data-ramo="Inglés básico II">Inglés básico II</button>
+        <button data-ramo="Habilidades para el trabajo">Habilidades para el trabajo</button>
+        <button data-ramo="Informática en la atención del paciente">Informática en la atención del paciente</button>
+        <button data-ramo="Promoción y prevención de la salud">Promoción y prevención de la salud</button>
+        <button data-ramo="Ética para el trabajo">Ética para el trabajo</button>
+        <button data-ramo="Práctica clínica III">Práctica clínica III</button>
+        <button data-ramo="Proceso de Portafolio Final">Proceso de Portafolio Final</button>
+      </div>
+    </div>
+
+    <div class="semestre" id="semestre-5">
+      <h2>5° PERIODO</h2>
+      <div class="ramos">
+        <button data-ramo="Internado">Internado</button>
+        <button data-ramo="Portafolio de título">Portafolio de título</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
