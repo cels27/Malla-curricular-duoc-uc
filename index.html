@@ -3,70 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Malla Curricular Técnico en Enfermería</title>
-  <link rel="stylesheet" href="estilos.css" />
+  <title>Malla Técnico en Enfermería</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>Malla Curricular Técnico en Enfermería</h1>
   <div class="malla">
 
-    <!-- 1° PERIODO -->
-    <div class="periodo">
-      <h2>1° PERIODO</h2>
-      <button class="ramo" data-id="bioseguridad">Bioseguridad en la atención clínica</button>
-      <button class="ramo" data-id="tecnicas">Técnicas básicas de enfermería</button>
-      <button class="ramo" data-id="primeros">Técnicas de primeros auxilios</button>
-      <button class="ramo" data-id="anatomia">Anatomía y fisiología</button>
-      <button class="ramo" data-id="comunicacion">Habilidades básicas de comunicación</button>
-      <button class="ramo" data-id="numericas">Habilidades numéricas</button>
-      <button class="ramo" data-id="portafolio1">Proceso de Portafolio 1</button>
-    </div>
+    <!-- PRIMER AÑO -->
+    <section>
+      <h2>Primer Año - 1° Periodo</h2>
+      <div class="periodo">
+        <button class="ramo" data-id="bioseguridad">Bioseguridad en la atención clínica</button>
+        <button class="ramo" data-id="tecnicas-basicas">Técnicas básicas de enfermería</button>
+        <button class="ramo" data-id="primeros-auxilios">Técnicas de primeros auxilios</button>
+        <button class="ramo" data-id="anatomia">Anatomía y fisiología</button>
+        <button class="ramo" data-id="comunicacion1">Habilidades básicas de comunicación</button>
+        <button class="ramo" data-id="numericas">Habilidades numéricas</button>
+        <button class="ramo" data-id="portafolio1">Proceso de Portafolio 1</button>
+      </div>
+    </section>
 
-    <!-- 2° PERIODO -->
-    <div class="periodo">
-      <h2>2° PERIODO</h2>
-      <button class="ramo" data-id="farmacos" data-prerq="bioseguridad,tecnicas">Administración de fármacos</button>
-      <button class="ramo" data-id="medicoq" data-prerq="anatomia,tecnicas">Atención de enfermería médico quirúrgica</button>
-      <button class="ramo" data-id="materno" data-prerq="anatomia,comunicacion">Cuidados de enfermería maternoneonatal</button>
-      <button class="ramo" data-id="antropologia">Fundamentos de antropología</button>
-      <button class="ramo" data-id="comunicacion2" data-prerq="comunicacion">Habilidades de comunicación efectiva</button>
-      <button class="ramo" data-id="matematico" data-prerq="numericas">Habilidades del lenguaje matemático</button>
-      <button class="ramo" data-id="practica1" data-prerq="bioseguridad,tecnicas">Práctica clínica I</button>
-      <button class="ramo" data-id="portafolio2" data-prerq="portafolio1">Proceso de Portafolio 2</button>
-    </div>
+    <section>
+      <h2>Primer Año - 2° Periodo</h2>
+      <div class="periodo">
+        <button class="ramo" data-id="farmacos" data-req="bioseguridad,tecnicas-basicas">Administración de fármacos</button>
+        <button class="ramo" data-id="medico-quirurgica" data-req="anatomia">Atención de enfermería médico quirúrgica</button>
+        <button class="ramo" data-id="materno" data-req="anatomia">Cuidados de enfermería maternoneonatal</button>
+        <button class="ramo" data-id="antropologia">Fundamentos de antropología</button>
+        <button class="ramo" data-id="comunicacion2" data-req="comunicacion1">Habilidades de comunicación efectiva</button>
+        <button class="ramo" data-id="lenguaje-matematico" data-req="numericas">Habilidades del lenguaje matemático</button>
+        <button class="ramo" data-id="practica1" data-req="tecnicas-basicas,bioseguridad">Práctica clínica I</button>
+        <button class="ramo" data-id="portafolio2" data-req="portafolio1">Proceso de Portafolio 2</button>
+      </div>
+    </section>
 
-    <!-- 3° PERIODO -->
-    <div class="periodo">
-      <h2>3° PERIODO</h2>
-      <button class="ramo" data-id="urgencias" data-prerq="farmacos,medicoq">Cuidados de enfermería en urgencias</button>
-      <button class="ramo" data-id="pediatria" data-prerq="materno">Cuidados de enfermería pediátrica</button>
-      <button class="ramo" data-id="ingles1">Inglés básico I</button>
-      <button class="ramo" data-id="equipos">Manejo de equipos e insumos</button>
-      <button class="ramo" data-id="cristiana">Optativo formación cristiana</button>
-      <button class="ramo" data-id="emprendedora">Mentalidad emprendedora</button>
-      <button class="ramo" data-id="practica2" data-prerq="practica1">Práctica clínica II</button>
-      <button class="ramo" data-id="portafolio3" data-prerq="portafolio2">Proceso de Portafolio 3</button>
-    </div>
+    <!-- SEGUNDO AÑO -->
+    <section>
+      <h2>Segundo Año - 3° Periodo</h2>
+      <div class="periodo">
+        <button class="ramo" data-id="urgencias" data-req="medico-quirurgica">Cuidados de enfermería en urgencias</button>
+        <button class="ramo" data-id="pediatria" data-req="materno">Cuidados de enfermería pediátrica</button>
+        <button class="ramo" data-id="ingles1">Inglés básico I</button>
+        <button class="ramo" data-id="equipos">Manejo de equipos e insumos</button>
+        <button class="ramo" data-id="optativo">Optativo formación cristiana</button>
+        <button class="ramo" data-id="emprendedora">Mentalidad emprendedora</button>
+        <button class="ramo" data-id="practica2" data-req="practica1">Práctica clínica II</button>
+        <button class="ramo" data-id="portafolio3" data-req="portafolio2">Proceso de Portafolio 3</button>
+      </div>
+    </section>
 
-    <!-- 4° PERIODO -->
-    <div class="periodo">
-      <h2>4° PERIODO</h2>
-      <button class="ramo" data-id="mental" data-prerq="urgencias">Cuidados de enfermería en salud mental</button>
-      <button class="ramo" data-id="ingles2" data-prerq="ingles1">Inglés básico II</button>
-      <button class="ramo" data-id="trabajo">Habilidades para el trabajo</button>
-      <button class="ramo" data-id="informatica">Informática en la atención del paciente</button>
-      <button class="ramo" data-id="promocion">Promoción y prevención de la salud</button>
-      <button class="ramo" data-id="etica">Ética para el trabajo</button>
-      <button class="ramo" data-id="practica3" data-prerq="practica2">Práctica clínica III</button>
-      <button class="ramo" data-id="portafoliofinal" data-prerq="portafolio3">Proceso de Portafolio Final</button>
-    </div>
+    <section>
+      <h2>Segundo Año - 4° Periodo</h2>
+      <div class="periodo">
+        <button class="ramo" data-id="salud-mental" data-req="urgencias">Cuidados de enfermería en salud mental</button>
+        <button class="ramo" data-id="ingles2" data-req="ingles1">Inglés básico II</button>
+        <button class="ramo" data-id="trabajo">Habilidades para el trabajo</button>
+        <button class="ramo" data-id="informatica">Informática en la atención del paciente</button>
+        <button class="ramo" data-id="promocion">Promoción y prevención de la salud</button>
+        <button class="ramo" data-id="etica">Ética para el trabajo</button>
+        <button class="ramo" data-id="practica3" data-req="practica2">Práctica clínica III</button>
+        <button class="ramo" data-id="portafolio-final" data-req="portafolio3">Proceso de Portafolio Final</button>
+      </div>
+    </section>
 
-    <!-- 5° PERIODO -->
-    <div class="periodo">
-      <h2>5° PERIODO</h2>
-      <button class="ramo" data-id="internado" data-prerq="practica3,portafoliofinal">Internado</button>
-      <button class="ramo" data-id="titulo" data-prerq="portafoliofinal">Portafolio de título</button>
-    </div>
+    <!-- TERCER AÑO -->
+    <section>
+      <h2>Tercer Año - 5° Periodo</h2>
+      <div class="periodo">
+        <button class="ramo" data-id="internado" data-req="practica3,salud-mental">Internado</button>
+        <button class="ramo" data-id="portafolio-titulo" data-req="portafolio-final">Portafolio de título</button>
+      </div>
+    </section>
 
   </div>
 
