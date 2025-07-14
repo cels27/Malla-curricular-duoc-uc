@@ -1,30 +1,32 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const ramos = document.querySelectorAll(".periodo ul li");
+// Al cargar la página restaurar estado de selección desde localStorage
+document.addEventListener('DOMContentLoaded', () => {
+  const ramos = document.querySelectorAll('.ramo');
 
-  // Cargar aprobados desde localStorage
-  const aprobados = JSON.parse(localStorage.getItem("ramosAprobados")) || {};
+  // Obtener estado guardado (objeto con ids y true/false)
+  const saved = JSON.parse(localStorage.getItem('ramosSeleccionados') || '{}');
 
-  // Restaurar estado
+  // Restaurar estados
   ramos.forEach(ramo => {
-    const nombre = ramo.dataset.ramo;
-    if (aprobados[nombre]) {
-      ramo.classList.add("aprobado");
+    const id = ramo.dataset.id;
+    if (saved[id]) {
+      ramo.classList.add('selected');
+    } else {
+      ramo.classList.remove('selected');
     }
-  });
 
-  // Toggle aprobado al hacer clic y guardar
-  ramos.forEach(ramo => {
-    ramo.addEventListener("click", () => {
-      ramo.classList.toggle("aprobado");
-      const nombre = ramo.dataset.ramo;
-
-      if (ramo.classList.contains("aprobado")) {
-        aprobados[nombre] = true;
-      } else {
-        delete aprobados[nombre];
-      }
-
-      localStorage.setItem("ramosAprobados", JSON.stringify(aprobados));
+    // Agregar evento click para alternar estado
+    ramo.addEventListener('click', () => {
+      ramo.classList.toggle('selected');
+      saveState();
     });
   });
+
+  // Guardar estado actual en localStorage
+  function saveState() {
+    const estados = {};
+    ramos.forEach(ramo => {
+      estados[ramo.dataset.id] = ramo.classList.contains('selected');
+    });
+    localStorage.setItem('ramosSeleccionados', JSON.stringify(estados));
+  }
 });
