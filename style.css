@@ -1,79 +1,82 @@
-/* Fondo general */
+/* Colores rosa y morado combinados */
+:root {
+    --rosa: #e91e63;
+    --morado: #7b1fa2;
+    --rosa-claro: #f8bbd0;
+    --morado-claro: #d1c4e9;
+    --fondo: #faf5fc;
+    --texto: #3e1f47;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f6e6f9; /* suave rosa-lila */
-  color: #4a2c61;
-  margin: 20px;
-  text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    margin: 20px;
 }
 
-/* Títulos */
 h1 {
-  color: #9c27b0; /* morado vibrante */
-  margin-bottom: 30px;
+    text-align: center;
+    color: var(--morado);
+    margin-bottom: 30px;
 }
 
-h2 {
-  color: #d81b60; /* rosa intenso */
-  margin-top: 40px;
-  margin-bottom: 15px;
+.malla-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
 }
 
-/* Contenedor de períodos */
-.period {
-  margin-bottom: 30px;
+.semestre {
+    background: var(--rosa-claro);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(123,31,162,0.2);
+    flex: 0 0 220px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Contenedor de ramos */
-.subjects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
+.semestre h2 {
+    color: var(--morado);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--morado);
+    width: 100%;
+    text-align: center;
+    padding-bottom: 5px;
 }
 
-/* Botones de ramos */
-.subject {
-  background: linear-gradient(135deg, #f48fb1, #ce93d8);
-  border: 2px solid #9c27b0;
-  border-radius: 10px;
-  padding: 12px 22px;
-  min-width: 210px;
-  cursor: pointer;
-  color: white;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: background 0.3s, box-shadow 0.3s;
-  user-select: none;
-  outline-offset: 2px;
+.semestre ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
 }
 
-/* Hover */
-.subject:hover:not(:disabled):not(.approved) {
-  background: linear-gradient(135deg, #ce93d8, #f48fb1);
-  box-shadow: 0 0 12px 2px #d81b60aa;
+.ramo {
+    background-color: var(--morado-claro);
+    margin: 6px 0;
+    padding: 10px 12px;
+    border-radius: 7px;
+    color: var(--morado);
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(123,31,162,0.15);
 }
 
-/* Deshabilitados (requisitos no cumplidos) */
-.subject:disabled {
-  background: #e1bee7;
-  border-color: #ba68c8;
-  color: #7e57c2;
-  cursor: not-allowed;
-  box-shadow: none;
+.ramo:hover {
+    background-color: var(--rosa);
+    color: white;
+    box-shadow: 0 4px 8px rgba(233,30,99,0.7);
 }
 
-/* Aprobado */
-.subject.approved {
-  background: linear-gradient(135deg, #ad1457, #6a1b9a);
-  border-color: #4a148c;
-  box-shadow: 0 0 15px 4px #ce93d8cc;
-  cursor: default;
-}
-
-/* Para pantalla pequeña */
-@media (max-width: 600px) {
-  .subject {
-    min-width: 90%;
-  }
+.ramo.aprobado {
+    background-color: var(--morado);
+    color: white;
+    text-decoration: line-through;
+    box-shadow: none;
+    cursor: default;
 }
