@@ -1,19 +1,30 @@
-// script.js
 document.addEventListener("DOMContentLoaded", () => {
-  const botones = document.querySelectorAll("button[data-ramo]");
-  const aprobados = JSON.parse(localStorage.getItem("ramosAprobados") || "[]");
+  const ramos = document.querySelectorAll(".periodo ul li");
 
-  botones.forEach(btn => {
-    const nombre = btn.getAttribute("data-ramo");
-    if (aprobados.includes(nombre)) {
-      btn.classList.add("aprobado");
+  // Cargar aprobados desde localStorage
+  const aprobados = JSON.parse(localStorage.getItem("ramosAprobados")) || {};
+
+  // Restaurar estado
+  ramos.forEach(ramo => {
+    const nombre = ramo.dataset.ramo;
+    if (aprobados[nombre]) {
+      ramo.classList.add("aprobado");
     }
+  });
 
-    btn.addEventListener("click", () => {
-      btn.classList.toggle("aprobado");
-      const actualizado = Array.from(document.querySelectorAll("button.aprobado"))
-                              .map(b => b.getAttribute("data-ramo"));
-      localStorage.setItem("ramosAprobados", JSON.stringify(actualizado));
+  // Toggle aprobado al hacer clic y guardar
+  ramos.forEach(ramo => {
+    ramo.addEventListener("click", () => {
+      ramo.classList.toggle("aprobado");
+      const nombre = ramo.dataset.ramo;
+
+      if (ramo.classList.contains("aprobado")) {
+        aprobados[nombre] = true;
+      } else {
+        delete aprobados[nombre];
+      }
+
+      localStorage.setItem("ramosAprobados", JSON.stringify(aprobados));
     });
   });
 });
