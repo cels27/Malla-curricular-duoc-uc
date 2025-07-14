@@ -1,82 +1,25 @@
-/* Colores rosa y morado combinados */
-:root {
-    --rosa: #e91e63;
-    --morado: #7b1fa2;
-    --rosa-claro: #f8bbd0;
-    --morado-claro: #d1c4e9;
-    --fondo: #faf5fc;
-    --texto: #3e1f47;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--fondo);
-    color: var(--texto);
-    margin: 20px;
-}
-
-h1 {
-    text-align: center;
-    color: var(--morado);
-    margin-bottom: 30px;
-}
-
-.malla-container {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-}
-
-.semestre {
-    background: var(--rosa-claro);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(123,31,162,0.2);
-    flex: 0 0 220px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.semestre h2 {
-    color: var(--morado);
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--morado);
-    width: 100%;
-    text-align: center;
-    padding-bottom: 5px;
-}
-
-.semestre ul {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-}
-
 .ramo {
-    background-color: var(--morado-claro);
+    background-color: var(--rosa-claro);
+    color: var(--rosa);
     margin: 6px 0;
     padding: 10px 12px;
     border-radius: 7px;
-    color: var(--morado);
     font-weight: 600;
     cursor: pointer;
     user-select: none;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(123,31,162,0.15);
+    box-shadow: 0 2px 5px rgba(233,30,99,0.15);
 }
 
 .ramo:hover {
     background-color: var(--rosa);
     color: white;
-    box-shadow: 0 4px 8px rgba(233,30,99,0.7);
+    box-shadow: 0 4px 8px rgba(233,30,99,0.4);
 }
 
 .ramo.aprobado {
-    background-color: var(--morado);
-    color: white;
-    text-decoration: line-through;
+    background-color: var(--morado-claro);
+    color: var(--morado);
     box-shadow: none;
-    cursor: default;
+    text-decoration: none;
 }
