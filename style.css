@@ -1,46 +1,24 @@
-/* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 body {
-  background-color: #f9e7f5; /* rosa claro de fondo */
-  color: #4a1a4a; /* morado oscuro texto principal */
+  background-color: #f9e7f5; /* rosa claro fondo, igual */
+  color: #4a1a4a;
   padding: 20px;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #5e2a5e;
-}
+/* ... */
 
-.malla-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.anio {
-  margin-bottom: 40px;
-}
-
-.anio > h2 {
-  margin-bottom: 15px;
-  color: #7d3a7d;
-}
+/* Ajustar periodos para que se alineen siempre horizontalmente y no se desborde la altura */
 
 .periodos {
   display: flex;
   gap: 20px;
   overflow-x: auto;
   padding-bottom: 10px;
+  /* quitamos altura máxima para que se vean alineados */
 }
 
+/* Ajustar cada periodo para que la altura sea automática y se alineen bien */
 .periodo {
-  background-color: #ffd6f0; /* rosa claro */
+  background-color: #ffcae9; /* rosa más fuerte que antes para destacar */
   border-radius: 8px;
   padding: 15px;
   min-width: 270px;
@@ -49,31 +27,13 @@ h1 {
   flex-direction: column;
   cursor: default;
   user-select: none;
-  height: 100%;
+  height: auto; /* quitar altura fija */
 }
 
-.periodo h3 {
-  margin-bottom: 15px;
-  color: #ad3aad; /* rosa oscuro */
-  text-align: center;
-  font-weight: 600;
-}
-
-.periodo ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-height: 400px;
-  overflow-y: auto;
-  padding-right: 5px;
-}
-
-/* Ramos (items) */
-
+/* Ramos no seleccionados con rosa más fuerte y texto más oscuro */
 .periodo ul li {
-  background-color: #fbd6f7; /* rosa muy claro */
-  color: #a42aa4; /* rosa oscuro */
+  background-color: #f9bde6; /* rosa claro más definido */
+  color: #8b207e; /* rosa oscuro más intenso */
   padding: 8px 12px;
   border-radius: 6px;
   border: 2px solid transparent;
@@ -81,43 +41,4 @@ h1 {
   transition: all 0.25s ease;
   font-weight: 600;
   user-select: none;
-}
-
-/* Estado aprobado (seleccionado) */
-
-.periodo ul li.aprobado {
-  background-color: #cdb3e9; /* morado claro */
-  color: #3d0f6f; /* morado oscuro */
-  border-color: #6e42b0;
-}
-
-/* Hover */
-
-.periodo ul li:hover {
-  border-color: #a752bc;
-}
-
-/* Scrollbar vertical para ramos */
-
-.periodo ul::-webkit-scrollbar {
-  width: 6px;
-}
-
-.periodo ul::-webkit-scrollbar-thumb {
-  background-color: #b085cd;
-  border-radius: 3px;
-}
-
-/* Responsive */
-
-@media (max-width: 700px) {
-  .periodos {
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  .periodo {
-    min-width: 100%;
-    max-height: none;
-  }
 }
