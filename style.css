@@ -1,1 +1,48 @@
+/* estilos.css */
+body {
+  font-family: Arial, sans-serif;
+  background: #fff0f5;
+  color: #4b0082;
+  padding: 20px;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #c71585;
+  margin-bottom: 30px;
+}
+
+.malla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.ramo {
+  border: 2px solid #c71585;
+  background-color: #ffe6f0;
+  padding: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  position: relative;
+}
+
+.ramo.aprobado {
+  background-color: #dda0dd;
+  border-color: #800080;
+  color: white;
+  text-decoration: line-through;
+}
+
+.ramo.bloqueado {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.ramo:hover {
+  transform: scale(1.03);
+}
 
