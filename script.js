@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const ramos = document.querySelectorAll(".ramo");
 
-  // Inicialmente bloquear todos los que tienen requisitos
-  ramos.forEach((ramo) => {
+  // Inicializar: bloquear los que tienen requisitos
+  ramos.forEach(ramo => {
     const req = ramo.dataset.req;
     if (req) {
       ramo.classList.add("bloqueado");
@@ -10,29 +10,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  ramos.forEach((ramo) => {
+  ramos.forEach(ramo => {
     ramo.addEventListener("click", () => {
       if (ramo.classList.contains("bloqueado")) return;
 
+      // Toggle aprobado
       ramo.classList.toggle("aprobado");
 
-      // Revisar desbloqueo de otros ramos
-      ramos.forEach((otro) => {
-        const requisitos = otro.dataset.req?.split(",");
-        if (!requisitos) return;
-
-        const cumplidos = requisitos.every((id) =>
-          document.querySelector(`[data-id='${id}']`)?.classList.contains("aprobado")
-        );
-
-        if (cumplidos) {
-          otro.classList.remove("bloqueado");
-          otro.disabled = false;
-        } else {
-          otro.classList.add("bloqueado");
-          otro.disabled = true;
-        }
-      });
+      // Actualizar desbloqueos
+      actualizarDesbloqueos();
     });
   });
+
+  function actualizarDesbloqueos() {
+    ramos.forEach(ramo => {
+      const reqs = ramo.dataset.req?.split(",").map(r => r.trim());
+      if (!reqs) return; // sin requisito: siempre desbloqueado
+
+      const cumplidos = reqs.every(id =>
+        document.querySelector(`[data-id="${id}"]`)?.classList.contains("aprobado")
+      );
+
+      if (cumplidos) {
+        ramo.classList.remove("bloqueado");
+        ramo.disabled = false;
+      } else {
+        ramo.classList.add("bloqueado");
+        ramo.disabled = true;
+        ramo.classList.remove("aprobado"); // si se bloquea, desaprobarlo
+      }
+    });
+  }
 });
