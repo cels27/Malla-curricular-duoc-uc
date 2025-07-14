@@ -1,56 +1,81 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fce4ec;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #fce4ec, #e1bee7);
   margin: 0;
   padding: 20px;
   color: #4a148c;
+  min-height: 100vh;
 }
 
 h1 {
   text-align: center;
-  color: #ad1457;
-}
-
-section {
   margin-bottom: 40px;
+  font-weight: 700;
+  color: #880e4f;
+  text-shadow: 1px 1px 4px #a96cb4;
 }
 
 h2 {
   color: #6a1b9a;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 4px #ce93d8;
+}
+
+.malla {
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .periodo {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
+  margin-bottom: 40px;
+  justify-content: center;
 }
 
 .ramo {
-  background-color: #f8bbd0;
-  color: #4a148c;
+  background-color: #f48fb1;
   border: 2px solid #ce93d8;
-  border-radius: 12px;
-  padding: 12px;
-  min-width: 200px;
-  text-align: center;
+  border-radius: 14px;
+  padding: 14px 22px;
+  min-width: 220px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  color: #4a148c;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(173, 20, 87, 0.2);
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s,
+    box-shadow 0.3s;
+  user-select: none;
 }
 
-.ramo:hover {
-  background-color: #f48fb1;
+.ramo:hover:not(.bloqueado) {
+  background-color: #ad1457;
+  color: white;
+  border-color: #880e4f;
+  box-shadow: 0 6px 12px rgba(168, 20, 88, 0.6);
 }
 
 .ramo.aprobado {
-  background-color: #ce93d8;
+  background-color: #6a1b9a;
   color: white;
-  border-color: #ab47bc;
+  border-color: #4a148c;
+  box-shadow: 0 0 10px #9c27b0;
 }
 
 .ramo.bloqueado {
   background-color: #fce4ec;
-  color: #aaa;
+  color: #bbb;
   border-color: #e1bee7;
   cursor: not-allowed;
+  box-shadow: none;
+  pointer-events: none;
 }
