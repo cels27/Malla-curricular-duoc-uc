@@ -1,21 +1,117 @@
-.periodo ul li {
-  min-width: 160px;
-  white-space: nowrap;
-  text-align: center;
-  background-color: #f9bde6; /* rosa claro */
-  color: #8b207e;            /* rosa oscuro */
-  padding: 12px 10px;
-  border-radius: 8px;
-  border: 2px solid #8b207e; /* borde rosado igual color letras */
-  cursor: pointer;
-  transition: all 0.25s ease;
-  font-weight: 600;
-  user-select: none;
+/* Variables de colores */
+:root {
+  --rosa-claro: #ffd6e8;
+  --rosa-oscuro: #b33951;
+  --morado-claro: #d6c9f9;
+  --morado-oscuro: #4b3a85;
+  --fondo-pagina: #f9f5fb;
+  --borde-rosa: #b33951;
 }
 
-/* Ramos aprobados */
-.periodo ul li.aprobado {
-  background-color: #cdb3e9; /* morado claro */
-  color: #3d0f6f;            /* morado oscuro */
-  border-color: #6e42b0;
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--fondo-pagina);
+  margin: 20px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--morado-oscuro);
+}
+
+/* Contenedor malla */
+.malla {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+/* Año */
+.year {
+  min-width: 250px;
+  border: 2px solid var(--morado-oscuro);
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px rgb(75 58 133 / 0.15);
+}
+
+.year h2 {
+  text-align: center;
+  color: var(--morado-oscuro);
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--morado-oscuro);
+  padding-bottom: 5px;
+}
+
+/* Periodos */
+.period {
+  margin-bottom: 20px;
+}
+
+.period h3 {
+  font-size: 1.1em;
+  color: var(--morado-oscuro);
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--morado-oscuro);
+  padding-bottom: 3px;
+}
+
+/* Ramos */
+.ramos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ramo {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: 2px solid;
+  text-align: left;
+  transition: background-color 0.3s, color 0.3s;
+  user-select: none;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+/* Ramos NO seleccionados */
+.ramo:not(.selected) {
+  background-color: var(--rosa-claro);
+  color: var(--rosa-oscuro);
+  border-color: var(--borde-rosa);
+}
+
+/* Ramos seleccionados */
+.ramo.selected {
+  background-color: var(--morado-claro);
+  color: var(--morado-oscuro);
+  border-color: var(--morado-oscuro);
+}
+
+/* Al hacer foco (para accesibilidad) */
+.ramo:focus {
+  box-shadow: 0 0 0 3px var(--morado-oscuro);
+}
+
+/* Scroll horizontal para la malla si hay overflow */
+.malla::-webkit-scrollbar {
+  height: 8px;
+}
+.malla::-webkit-scrollbar-track {
+  background: transparent;
+}
+.malla::-webkit-scrollbar-thumb {
+  background-color: var(--morado-oscuro);
+  border-radius: 4px;
 }
