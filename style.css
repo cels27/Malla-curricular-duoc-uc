@@ -1,66 +1,64 @@
-:root {
-    --rosa: #e91e63;              /* rosa oscuro (texto no aprobado) */
-    --morado: #7b1fa2;            /* morado oscuro (texto aprobado) */
-    --rosa-claro: #f8bbd0;        /* fondo no aprobado */
-    --morado-claro: #d1c4e9;      /* fondo aprobado */
-    --fondo: #faf5fc;             /* fondo general de la página */
-    --texto: #3e1f47;             /* texto general */
-}
-
+/* style.css */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--fondo);
-    color: var(--texto);
-    margin: 20px;
+  background-color: #fbe4f5;
+  font-family: 'Segoe UI', sans-serif;
+  color: #5e005e;
+  margin: 0;
+  padding: 20px;
 }
 
 h1 {
-    text-align: center;
-    color: var(--morado);
-    margin-bottom: 30px;
+  text-align: center;
+  color: #a000a0;
 }
 
-.malla-container {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 10px;
+.malla {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px;
 }
 
 .semestre {
-    background: var(--rosa-claro);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(123,31,162,0.2);
-    flex: 0 0 220px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  min-width: 250px;
+  background-color: #ffd6eb;
+  border: 2px solid #ff85c1;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex-shrink: 0;
 }
 
 .semestre h2 {
-    color: var(--morado);
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--morado);
-    width: 100%;
-    text-align: center;
-    padding-bottom: 5px;
+  text-align: center;
+  color: #cc3399;
 }
 
-.semestre ul {
-    list-style: none;
-    padding: 0;
-    width: 100%;
+.ramos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-.ramo {
-    background-color: var(--rosa-claro);
-    color: var(--rosa);
-    margin: 6px 0;
-    padding: 10px 12px;
-    border-radius: 7px;
-    font-weight: 600;
-    cursor: pointer;
-    user-select: none;
-    transit
-    
+button {
+  padding: 10px;
+  background-color: #ffe0f0;         /* Rosa claro */
+  color: #cc3399;                    /* Rosa oscuro */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-align: left;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button.aprobado {
+  background-color: #e5d0ff;        /* Morado claro */
+  color: #5e00a0;                   /* Morado oscuro */
+  border: 2px solid #ba7fff;
+}
