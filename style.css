@@ -1,87 +1,61 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fff0f5;
-  color: #4B0082;
+  font-family:Constantia;
+  background-color: #fff0f5; /* fondo rosa pálido */
+  color: #4B0082; /* texto principal morado oscuro */
   margin: 0;
   padding: 10px;
+  font-size: 14px; /* tamaño de fuente reducido */
 }
 
 h1 {
   text-align: center;
   color: #800080;
-  font-size: 1.6rem;
-  margin-bottom: 10px;
+  font-size: 20px; /* título un poco más pequeño */
 }
 
 .malla {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  gap: 15px;
   overflow-x: auto;
-  gap: 12px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .semestre {
-  flex: 0 0 230px;
-  background-color: #ffe6f0;
+  min-width: 200px;
+  background-color: #ffe6f0; /* rosa claro */
   padding: 8px;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .semestre h2 {
-  font-size: 1rem;
   text-align: center;
-  background-color: #ffc0cb;
+  background-color: #ffc0cb; /* encabezado rosa medio */
   padding: 8px;
-  border-radius: 8px;
-  color: #c71585;
+  border-radius: 6px;
+  color: #c71585; /* rosa oscuro */
+  font-size: 16px;
 }
 
 .ramo {
-  font-size: 0.9rem;
   margin: 6px 0;
   padding: 8px;
-  background-color: #ffe6f0;
-  border: 2px solid #c71585;
-  border-radius: 6px;
-  color: #c71585;
+  background-color: #ffe6f0; /* rosa claro */
+  border: 2px solid #c71585; /* borde rosa oscuro */
+  border-radius: 5px;
+  color: #c71585; /* texto rosa oscuro */
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 13px;
 }
 
 .ramo.aprobado {
-  background-color: #e6e6fa;
-  border-color: #4B0082;
-  color: #4B0082;
+  background-color: #e6e6fa; /* morado claro */
+  border-color: #4B0082; /* borde morado oscuro */
+  color: #4B0082; /* texto morado oscuro */
 }
 
 .ramo:hover {
-  opacity: 0.95;
+  opacity: 0.9;
 }
-
-/* 🌟 Ajuste especial para pantallas pequeñas (tablets) */
-@media (max-width: 1280px) {
-  h1 {
-    font-size: 1.4rem;
-  }
-
-  .malla {
-    gap: 10px;
-  }
-
-  .semestre {
-    flex: 0 0 200px;
-    padding: 6px;
-  }
-
-  .semestre h2 {
-    font-size: 0.95rem;
-  }
-
-  .ramo {
-    font-size: 0.85rem;
-    padding: 6px;
-  }
-}
+no
