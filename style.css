@@ -1,117 +1,56 @@
-/* Variables de colores */
-:root {
-  --rosa-claro: #ffd6e8;
-  --rosa-oscuro: #b33951;
-  --morado-claro: #d6c9f9;
-  --morado-oscuro: #4b3a85;
-  --fondo-pagina: #f9f5fb;
-  --borde-rosa: #b33951;
-}
-
-/* Reset básico */
-* {
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--fondo-pagina);
-  margin: 20px;
-  color: #333;
+  font-family: Arial, sans-serif;
+  background-color: #fff0f5; /* fondo rosa pálido */
+  color: #4B0082; /* texto principal morado oscuro */
+  margin: 0;
+  padding: 20px;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 30px;
-  color: var(--morado-oscuro);
+  color: #800080;
 }
 
-/* Contenedor malla */
 .malla {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   overflow-x: auto;
-  padding-bottom: 10px;
-}
-
-/* Año */
-.year {
-  min-width: 250px;
-  border: 2px solid var(--morado-oscuro);
-  border-radius: 10px;
   padding: 10px;
-  background-color: white;
-  box-shadow: 0 0 10px rgb(75 58 133 / 0.15);
 }
 
-.year h2 {
+.semestre {
+  min-width: 250px;
+  background-color: #ffe6f0; /* rosa claro */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.semestre h2 {
   text-align: center;
-  color: var(--morado-oscuro);
-  margin-bottom: 10px;
-  border-bottom: 1px solid var(--morado-oscuro);
-  padding-bottom: 5px;
-}
-
-/* Periodos */
-.period {
-  margin-bottom: 20px;
-}
-
-.period h3 {
-  font-size: 1.1em;
-  color: var(--morado-oscuro);
-  margin-bottom: 8px;
-  border-bottom: 1px solid var(--morado-oscuro);
-  padding-bottom: 3px;
-}
-
-/* Ramos */
-.ramos {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  background-color: #ffc0cb; /* encabezado rosa medio */
+  padding: 10px;
+  border-radius: 8px;
+  color: #c71585; /* rosa oscuro */
 }
 
 .ramo {
-  cursor: pointer;
-  padding: 8px 12px;
+  margin: 8px 0;
+  padding: 10px;
+  background-color: #ffe6f0; /* rosa claro */
+  border: 2px solid #c71585; /* borde rosa oscuro */
   border-radius: 6px;
-  font-weight: 600;
-  border: 2px solid;
-  text-align: left;
-  transition: background-color 0.3s, color 0.3s;
-  user-select: none;
-  outline: none;
-  font-size: 0.95rem;
+  color: #c71585; /* texto rosa oscuro */
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* Ramos NO seleccionados */
-.ramo:not(.selected) {
-  background-color: var(--rosa-claro);
-  color: var(--rosa-oscuro);
-  border-color: var(--borde-rosa);
+.ramo.aprobado {
+  background-color: #e6e6fa; /* morado claro */
+  border-color: #4B0082; /* borde morado oscuro */
+  color: #4B0082; /* texto morado oscuro */
 }
 
-/* Ramos seleccionados */
-.ramo.selected {
-  background-color: var(--morado-claro);
-  color: var(--morado-oscuro);
-  border-color: var(--morado-oscuro);
-}
-
-/* Al hacer foco (para accesibilidad) */
-.ramo:focus {
-  box-shadow: 0 0 0 3px var(--morado-oscuro);
-}
-
-/* Scroll horizontal para la malla si hay overflow */
-.malla::-webkit-scrollbar {
-  height: 8px;
-}
-.malla::-webkit-scrollbar-track {
-  background: transparent;
-}
-.malla::-webkit-scrollbar-thumb {
-  background-color: var(--morado-oscuro);
-  border-radius: 4px;
+.ramo:hover {
+  opacity: 0.9;
 }
