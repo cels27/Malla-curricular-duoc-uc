@@ -26,7 +26,7 @@ h1 {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.semestre h2 {
+.semestre h2 
   text-align: center;
   background-color: #ffc0cb; /* encabezado rosa medio */
   padding: 10px;
@@ -54,3 +54,40 @@ h1 {
 .ramo:hover {
   opacity: 0.9;
 }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff0f5;
+  color: #4B0082;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #800080;
+  font-size: 1.6rem;
+}
+
+.malla {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.semestre {
+  min-width: 220px;
+  background-color: #ffe6f0;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.semestre h2 {
+  text-align: center;
+  background-color: #ffc0cb;
+  padding: 8px;
+  border-radius: 8px;
+  color: #c71585;
+  font-size: 1re
+  
