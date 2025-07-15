@@ -1,32 +1,19 @@
-// Al cargar la página restaurar estado de selección desde localStorage
 document.addEventListener('DOMContentLoaded', () => {
   const ramos = document.querySelectorAll('.ramo');
+  const estado = JSON.parse(localStorage.getItem('estadoRamos')) || {};
 
-  // Obtener estado guardado (objeto con ids y true/false)
-  const saved = JSON.parse(localStorage.getItem('ramosSeleccionados') || '{}');
-
-  // Restaurar estados
+  // Restaurar estado guardado
   ramos.forEach(ramo => {
     const id = ramo.dataset.id;
-    if (saved[id]) {
-      ramo.classList.add('selected');
-    } else {
-      ramo.classList.remove('selected');
+    if (estado[id]) {
+      ramo.classList.add('aprobado');
     }
 
-    // Agregar evento click para alternar estado
+    // Agregar interactividad
     ramo.addEventListener('click', () => {
-      ramo.classList.toggle('selected');
-      saveState();
+      ramo.classList.toggle('aprobado');
+      estado[id] = ramo.classList.contains('aprobado');
+      localStorage.setItem('estadoRamos', JSON.stringify(estado));
     });
   });
-
-  // Guardar estado actual en localStorage
-  function saveState() {
-    const estados = {};
-    ramos.forEach(ramo => {
-      estados[ramo.dataset.id] = ramo.classList.contains('selected');
-    });
-    localStorage.setItem('ramosSeleccionados', JSON.stringify(estados));
-  }
 });
